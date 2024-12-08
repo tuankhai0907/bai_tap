@@ -1,0 +1,149 @@
+.navbar {
+    position: fixed; /* Cá»‘ Ä‘á»‹nh navbar á»Ÿ Ä‘áº§u trang */
+    top: 0; /* Äáº·t navbar á»Ÿ phĂ­a trĂªn cĂ¹ng cá»§a trang */
+    width: 100%; /* Chiá»u rá»™ng cá»§a thanh navbar */
+    z-index: 1000; /* Äáº£m báº£o navbar hiá»ƒn thá»‹ trĂªn cĂ¡c pháº§n tá»­ khĂ¡c */
+}
+
+.navbar-brand{
+    margin-left: 40px;
+}
+.navbar .nav-link {
+    font-weight: bold; /* Äáº·t kiá»ƒu chá»¯ lĂ  Ä‘áº­m */
+    color: black;
+}
+.navbar-nav li {
+    margin-right: 10px; /* ThĂªm margin pháº£i 10px giá»¯a cĂ¡c tháº» li */
+}
+.nav-item:hover .nav-link::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* MĂ u cá»§a viá»n bĂªn dÆ°á»›i */
+}
+.d-flex {
+    margin-left: 0;
+}
+.icon-list {
+    list-style-type: none; /* Loáº¡i bá» dáº¥u cháº¥m Ä‘áº§u dĂ²ng cá»§a danh sĂ¡ch */
+    display: flex; /* Sá»­ dá»¥ng flexbox Ä‘á»ƒ hiá»ƒn thá»‹ cĂ¡c má»¥c ngang */
+    margin-top: 20px;
+}
+
+.icon-list li {
+    margin-right: 20px; /* Khoáº£ng cĂ¡ch giá»¯a cĂ¡c má»¥c trong danh sĂ¡ch */
+}
+
+.icon-list a {
+    text-decoration: none; /* Loáº¡i bá» gáº¡ch chĂ¢n máº·c Ä‘á»‹nh cá»§a liĂªn káº¿t */
+    color: #333; /* MĂ u vÄƒn báº£n cá»§a liĂªn káº¿t */
+}
+
+.icon-list a:hover {
+    color: rgb(0, 47, 255); /* MĂ u vÄƒn báº£n khi di chuá»™t qua liĂªn káº¿t */
+}
+.search {
+    border-radius: 90px;
+}
+.form {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 100px;
+}
+
+.search {
+    margin-right: 10px; /* Äá»ƒ táº¡o khoáº£ng cĂ¡ch giá»¯a Ă´ input vĂ  nĂºt tĂ¬m kiáº¿m */
+}
+.btn1{
+    padding: 15px 30px; /* Thay Ä‘á»•i giĂ¡ trá»‹ theo nhu cáº§u cá»§a báº¡n */
+    border: none;
+}
+
+.carousel-inner img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 100px;
+}
+#carouselExampleIndicators {
+    
+    max-width: 100%;
+    width: 1800px; /* Äáº·t chiá»u rá»™ng cá»§a carousel lĂ  1200px */
+    margin: 0 auto; /* CÄƒn giá»¯a carousel */
+}
+
+
+.image-container {
+    width: 100%; /* Thiết lập chiều rộng ảnh để lấp đầy phần chứa */
+    height: 200px; /* Thiết lập chiều cao cố định cho tất cả các ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị méo khi thay đổi kích thước */
+}
+.card-img-top{
+    transition: transform 0.3s;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    height: 60xp;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    background-color: #ffffff; /* MĂ u ná»n tráº¯ng */
+    color: #333333; /* MĂ u chá»¯ Ä‘en */
+    padding: 20px; /* Khoáº£ng cĂ¡ch giá»¯a cĂ¡c pháº§n tá»­ trong footer */
+    font-family: Arial, sans-serif; /* Font chá»¯ Arial hoáº·c font chá»¯ sans-serif */
+}
+
+.social-links {
+    margin-top: 10px; /* Khoáº£ng cĂ¡ch giá»¯a cĂ¡c liĂªn káº¿t máº¡ng xĂ£ há»™i */
+}
+
+.social-link {
+    display: inline-block; /* Hiá»ƒn thá»‹ liĂªn káº¿t máº¡ng xĂ£ há»™i theo hĂ ng ngang */
+    margin-right: 10px; /* Khoáº£ng cĂ¡ch giá»¯a cĂ¡c liĂªn káº¿t máº¡ng xĂ£ há»™i */
+    color: #333333; /* MĂ u chá»¯ Ä‘en cho liĂªn káº¿t máº¡ng xĂ£ há»™i */
+}
+
+.social-link:hover {
+    color: #007bff; /* MĂ u chá»¯ khi di chuá»™t qua liĂªn káº¿t máº¡ng xĂ£ há»™i */
+}
+.social-links .social-link i {
+    font-size: 4em; /* Äáº·t kĂ­ch thÆ°á»›c cho biá»ƒu tÆ°á»£ng */
+}
+.fa-facebook{
+    color: blue;
+}
+.fa-instagram{
+    color: #E4405F; /* MĂ u chĂ­nh cá»§a Instagram */
+}
+.fa-twitte{
+    color: #1DA1F2; /* MĂ u chĂ­nh cá»§a Twitter */
+
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.pagination li {
+    margin-right: 2px;
+    font-size: 16px;
+    color: #333;
+    padding: 1px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.pagination li.active {
+    background-color: #333;
+    color: white;
+}
+
+.pagination li:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}

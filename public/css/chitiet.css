@@ -1,0 +1,62 @@
+.chitiet {
+    padding-top: 90px; /* Äiá»u chá»‰nh khoáº£ng cĂ¡ch tá»« phĂ­a trĂªn */
+}
+.stretch-image {
+    width: 445px; /* Äáº·t chiá»u rá»™ng cá»§a áº£nh lĂ  100% */
+    height: 556px; /* Chiá»u cao tá»± Ä‘á»™ng Ä‘iá»u chá»‰nh theo tá»· lá»‡ */
+    margin-left: 60px;
+}
+.card-body {
+    margin-right: 40px;
+}
+
+.card-title {
+    color: #111;
+    font-size: 27.75px;
+    font-family: Spectral;
+    line-height: 33.3px;
+}
+
+.chitiet.card-text {
+    color: red; /* MĂ u chá»¯ cá»§a ná»™i dung */
+    margin-top: 40px; /* Khoáº£ng cĂ¡ch tá»« trĂªn xuá»‘ng */
+    font-size: 22.5px;
+    border-bottom: 1px solid #111 ;
+    border-top: 1px solid #111;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.input-group input {
+    width: 80px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0;
+}
+.btn1 {
+    margin-top: 30px;
+    width: 100%;
+    background-color: white; /* MĂ u ná»n */
+    color: #111; /* MĂ u chá»¯ */
+    border: 1px solid black; /* KhĂ´ng cĂ³ viá»n */
+    padding: 10px 20px; /* Äá»™ dĂ y cá»§a nĂºt */
+    font-size: 16px; /* KĂ­ch thÆ°á»›c chá»¯ */
+    cursor: pointer; /* Con trá» khi di chuá»™t vĂ o */
+    border-radius: 5px; /* Bo gĂ³c */
+}
+
+.btn1:hover {
+    border-bottom: 4px solid black;
+}

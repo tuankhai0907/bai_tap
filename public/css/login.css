@@ -1,0 +1,92 @@
+body {
+    background-image: url('/storage/images/image.png');
+    background-size: cover;
+    color: aliceblue;
+}
+.container {
+    width: 60%;
+    height: auto;
+   
+    margin-top: 100px;
+   
+}
+.input-container{
+    width: 100%;
+}
+
+
+.form-group{
+    margin: 20px;
+}
+.btn{
+    width: 95%;
+    margin-bottom: 30px;
+    margin-left: 20px;
+}
+h2 {
+    text-align: center; /* Căn giữa theo chiều ngang */
+    margin-top: 5rem; /* Khoảng cách top */
+    margin-bottom: 3rem; /* Khoảng cách bottom */
+}
+
+.password-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle input {
+    flex: 1;
+    padding: 5px;
+}
+
+.password-toggle button {
+   
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container input {
+    padding-right: 30px; /* Để tạo khoảng trống bên phải cho nút */
+}
+
+.input-container button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.input-container {
+    position: relative;
+}
+
+.input-container i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.input-container button:focus {
+    outline: none; /* Loại bỏ viền khi nút được focus */
+}
+
+.input-container button:active {
+    outline: none; /* Loại bỏ viền khi nút được click */
+}
+
+#password-toggle {
+    color: black; /* Đặt màu chữ và biểu tượng là màu đen */
+}
+
+#password-toggle i {
+    color: black; /* Đặt màu cho biểu tượng trong nút */
+}
