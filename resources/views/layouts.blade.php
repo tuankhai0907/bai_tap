@@ -34,7 +34,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link underline-hover" href="#">Giới thiệu</a>
+                    <a class="nav-link underline-hover" href="{{route('gioithieu.index')}}">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('lienhe.lienhe')}}">Liên hệ</a>
