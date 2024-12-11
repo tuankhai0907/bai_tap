@@ -15,15 +15,20 @@
         <div class="col-md-6">
             <div class="card-body custom-card-body">
                 <h4 class="card-title custom-card-title">{{ $products->product_name}}</h4>
-                <p class="card-text custom-card-text" style="color: red;">Giá : {{$products->price}}</p>
+                <p class="card-text custom-card-text" style="color: red;">
+                    Giá: {{ number_format($products->price, 0, ',', '.') }} VND
+                </p>
                 <p class="product-description">{{$products->description}}</p>
-                <h6>Các size có sẵn:</h6>
+    
                
-                <div class="btn-group" role="group" aria-label="Size Buttons">
-                    <button type="button" class="btn btn-outline-secondary" value="39">Size 39</button>
-                    <button type="button" class="btn btn-outline-secondary" value="40">Size 40</button>
-                    <button type="button" class="btn btn-outline-secondary" value="41">Size 41</button>
-                    <!-- Thêm các nút button khác tương tự cho các size khác -->
+                <div class="form-group">
+                    <label for="sizeSelect" style="margin-right: 10px">Chọn kích thước:</label>
+                    <select class="form-control" id="sizeSelect" name="size" style="margin-top: 10px; margin-right: 10px;">
+                        <option value="39">Size 39</option>
+                        <option value="40">Size 40</option>
+                        <option value="41">Size 41</option>
+                        <!-- Thêm các option khác tương tự cho các size khác -->
+                    </select>
                 </div>
                 <table class="table">
                     <thead>
