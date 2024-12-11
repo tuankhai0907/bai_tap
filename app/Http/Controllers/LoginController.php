@@ -18,13 +18,23 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
     
         if (Auth::attempt($credentials)) {
+            // Thêm thông báo đăng nhập thành công
+            $request->session()->flash('success', 'Đăng nhập thành công!');
+    
+            // Kiểm tra vai trò của người dùng
             if (Auth::user()->role == 'admin') {
                 return redirect()->route('products.qlsanpham');
             } else {
                 return redirect()->intended('home');
             }
         }
+    
+        // Nếu tài khoản hoặc mật khẩu sai
+        return redirect()->back()
+            ->withInput($request->only('email'))
+            ->withErrors(['email' => 'Tài khoản hoặc mật khẩu không đúng.']);
     }
+    
     public function logout()
     {
         Auth::logout();

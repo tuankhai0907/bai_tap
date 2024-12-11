@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
+    @if (session('success'))  
+    <div class="success-alert" role="alert">  
+        {{ session('success') }}  
+        <span class="close" onclick="this.parentElement.style.display='none';">&times;</span> 
+    </div>  
+@endif
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -54,13 +60,7 @@
                     <div class="card-body">  
                         <h5 class="card-title">{{ $product->product_name }}</h5>  
                         <p class="card-text" style="color: red;">{{ number_format($product->price, 0, ',', '.') }} VND</p>  
-                        <div class="rating">  
-                            <i class="fas fa-star"></i>  
-                            <i class="fas fa-star"></i>  
-                            <i class="fas fa-star"></i>  
-                            <i class="fas fa-star-half-alt"></i>  
-                            <i class="far fa-star"></i>  
-                        </div>  
+                       
                         
                     </div>  
                 </div>  
@@ -76,5 +76,69 @@
         </div>
     </div>
 </div>
+<style>
+    #success-alert {  
+    display: none; /* Bắt đầu ẩn */  
+}
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {  
+    const successAlert = document.getElementById('success-alert');  
+    
+    if (successAlert) {  
+        // Hiện thông báo  
+        successAlert.style.display = 'block';  
+        successAlert.style.opacity = 0;  
+        
+        // Hiệu ứng fade-in  
+        let fadeEffect = setInterval(function () {  
+            if (!successAlert.style.opacity) {  
+                successAlert.style.opacity = 0;  
+            }  
+            if (successAlert.style.opacity < 1) {  
+                successAlert.style.opacity += 0.1;  
+            } else {  
+                clearInterval(fadeEffect);  
+                // Hiệu ứng fade-out sau 3 giây  
+                setTimeout(function() {  
+                    let fadeOutEffect = setInterval(function () {  
+                        if (successAlert.style.opacity > 0) {  
+                            successAlert.style.opacity -= 0.1;  
+                        } else {  
+                            clearInterval(fadeOutEffect);  
+                            successAlert.style.display = 'none'; // Ẩn lại sau khi fade out  
+                        }  
+                    }, 50);  
+                }, 3000); // Thời gian hiển thị thông báo  
+            }  
+        }, 50);  
+    }  
+});
+</script>
+<style>  
+   
+   .success-alert {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 0; /* Hình vuông */
+    width: auto; /* Hoặc đặt độ rộng cụ thể nếu cần */
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    position: fixed; /* Hoặc absolute nếu bạn muốn nó nằm trong một phần tử cụ thể */
+    top: 100px; /* Khoảng cách từ đầu trang */
+    right: 20px; /* Khoảng cách từ bên trái */
+    z-index: 9999; /* Đảm bảo nó nằm trên các phần tử khác */
+}
+
+.close {
+    cursor: pointer;
+    margin-left: auto; /* Đẩy nút đóng sang bên phải */
+} 
+</style>  
+
+
 
 @endsection

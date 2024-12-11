@@ -51,9 +51,11 @@ Route::delete('/cart/{favorite_id}', [FavoriteProductController::class, 'destroy
 
 Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('place.order');
 Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+
 Route::get('/orders/qldonhang', [OrderController::class, 'qldonhang'])->name('orders.qldonhang');
 Route::delete('/orders/{order_id}', [OrderController::class, 'deleteOrder'])->name('orders.delete');
-Route::delete('/orders/{order_id}', [OrderController::class, 'deleteOrder1'])->name('orders.delete1');
+// Nếu bạn cần một hành động xóa khác, hãy sử dụng một URL khác
+Route::delete('/orders/force-delete/{order_id}', [OrderController::class, 'deleteOrder1'])->name('orders.delete1');
 Route::get('/orders/{order_id}', [OrderController::class, 'show'])->name('orders.show');
 
 Route::get('/lienhe', [lienheController::class, 'index'])->name('lienhe.lienhe');
