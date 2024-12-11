@@ -16,6 +16,7 @@ class OrderController extends Controller
     public function __construct()
     {
         $this->order = new Order();
+        $this->middleware('checklogin');
     }
 
     public function index()
