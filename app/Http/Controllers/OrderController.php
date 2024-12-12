@@ -74,6 +74,13 @@ class OrderController extends Controller
     
         // Lấy thông tin sản phẩm từ cơ sở dữ liệu
         $product = Product::find($request->product_id);
+    
+        // Kiểm tra số lượng đặt hàng
+        if ($request->quantity > $product->quantity) {
+            return redirect()->route('products.show', ['product_id' => $request->product_id])
+                             ->withErrors(['quantity' => 'Số lượng đặt hàng vượt quá số lượng sản phẩm có sẵn.']);
+        }
+    
         $total_amount = $product->price * $request->quantity;
     
         // Tạo mảng dữ liệu cho đơn hàng
@@ -93,7 +100,7 @@ class OrderController extends Controller
             // Giảm số lượng sản phẩm
             $product->quantity -= $request->quantity;
             $product->save();
-        
+    
             // Tạo đơn hàng chi tiết và lưu vào bảng order_details
             $orderDetail = [
                 'order_id' => $order->order_id,
@@ -101,12 +108,12 @@ class OrderController extends Controller
                 'quantity' => $request->quantity,
                 'unit_price' => $product->price,
             ];
-        
+    
             OrderDetail::create($orderDetail);
         }
-        
     
-        return redirect()->route('products.show', ['product_id' => $request->product_id])->with('success', 'Sản phẩm đã được thêm thành công.');
+        return redirect()->route('products.show', ['product_id' => $request->product_id])
+                         ->with('success', 'Sản phẩm đã được thêm thành công.');
     }
     public function deleteOrder($order_id)
     {

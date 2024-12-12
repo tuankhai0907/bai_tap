@@ -3,11 +3,16 @@
 @section('content')
 
 <div class="container mt-4 chitiet">
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+            @if ($errors->any())
+            <div class="alert alert-danger" style="margin-top: 10px">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
         @endif
+
     <div class="row">
         <div class="col-md-6">
             <img src="{{ asset('storage/' . $products->image_url) }}"class="img-fluid stretch-image" alt="{{ $products->image_url }}">
@@ -128,4 +133,5 @@
         document.getElementById('orderForm').submit();
     }
 </script>
+
 @endsection
