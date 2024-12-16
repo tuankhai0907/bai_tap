@@ -30,8 +30,8 @@
                             </a>  
                         </td>  
                         <td>{{ $item->quantity }}</td>  
-                        <td>{{ number_format($item->product->price, 2) }} VNĐ</td> <!-- Định dạng giá -->  
-                        <td>{{ number_format($item->quantity * $item->product->price, 2) }} VNĐ</td> <!-- Tổng giá -->  
+                        <td>{{ number_format($item->product->price) }} VNĐ</td> <!-- Định dạng giá -->  
+                        <td>{{ number_format($item->quantity * $item->product->price) }} VNĐ</td> <!-- Tổng giá -->  
                         <td>   
                             <form action="{{ route('cart.destroy', ['favorite_id' => $item->favorite_id]) }}" method="POST">  
                                 @csrf  
@@ -48,7 +48,7 @@
     </div>  
 
     <p class="mt-3">Tổng Số lượng: {{ $totalQuantity }}</p>  
-    <p>Tổng Giá: {{ number_format($totalPrice, 2) }} VNĐ</p>  
+    <p>Tổng Giá: {{ number_format($totalPrice) }} VNĐ</p>  
     <form action="{{ url('vnpay') }}" method="post">  
         @csrf   
         <button style="margin-bottom: 200px" type="submit" name="redirect" class="btn btn-primary">Thanh toán bằng vnpay</button> <!-- Nút thanh toán -->  
